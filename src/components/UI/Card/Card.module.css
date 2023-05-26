@@ -1,0 +1,14 @@
+.card {
+    background: white;
+    border-radius: 2.4rem;
+    padding: 4rem 3.2rem;
+    border: 1px solid hsla(0,0%,100%,.05);
+    background-color: rgba(255,255,255,.05);
+    box-shadow: 2px 0 2px 0 rgba(0,0,0,.1);
+}
+
+@media(max-width: 990px) {
+    .card {
+        padding-inline: 1rem;
+    }
+}

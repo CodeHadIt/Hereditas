@@ -1,0 +1,16 @@
+.btn {
+    display: inline-block;
+    font-size: 1.7rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    color: white;
+    background: var(--accent_one);
+    border: 1px solid var(--accent_one);
+    cursor: pointer;
+}
+
+@media(max-width: 765px) {
+    .btn {
+        font-size: 1.4rem;
+    }
+}

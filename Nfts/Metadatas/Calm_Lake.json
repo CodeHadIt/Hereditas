@@ -1,0 +1,24 @@
+{
+    "name": "Calm Lake",
+    "description": "A Calm Lake at sunset",
+    "id": "2",
+    "image": "https://ipfs.io/ipfs/QmYYCN8ZjMUm7JrSo2mkAmHohoPxHkxfegXagne7ub4CZi/Calm_Lake.jpg",
+    "attributes": [
+        {
+            "trait_type": "Primary Landscape",
+            "value": "River"
+        },
+        {
+            "trait_type": "Time of Day",
+            "value": "Dusk"
+        },
+        {
+            "trait_type": "View",
+            "value": "Normal"
+        },
+        {
+            "trait_type": "Secondary Landscape",
+            "value": "Forest"
+        }
+    ]
+}

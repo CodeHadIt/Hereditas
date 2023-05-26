@@ -1,0 +1,24 @@
+{
+    "name": "Blue Lake",
+    "description": "A beautiful blue lake with scrubs by its banks",
+    "image": "https://ipfs.io/ipfs/QmYYCN8ZjMUm7JrSo2mkAmHohoPxHkxfegXagne7ub4CZi/Blue_Lake.jpg",
+    "id": "1",
+    "attributes": [
+        {
+            "trait_type": "Primary Landscape",
+            "value": "Lake"
+        },
+        {
+            "trait_type": "Time of Day",
+            "value": "Dawn"
+        },
+        {
+            "trait_type": "View",
+            "value": "Aerial"
+        },
+        {
+            "trait_type": "Secondary Landscape",
+            "value": "Forest"
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "name": "Desert Oasis",
+    "description": "An oasis in the Namib Desert",
+    "id": "5",
+    "image": "https://ipfs.io/ipfs/QmYYCN8ZjMUm7JrSo2mkAmHohoPxHkxfegXagne7ub4CZi/Desert_Osasis.jpg",
+    "attributes": [
+        {
+            "trait_type": "Primary Landscape",
+            "value": "Oasis"
+        },
+        {
+            "trait_type": "Time of Day",
+            "value": "Dawn"
+        },
+        {
+            "trait_type": "View",
+            "value": "Plain"
+        },
+        {
+            "trait_type": "Secondary Landscape",
+            "value": "Desert"
+        }
+    ]
+}

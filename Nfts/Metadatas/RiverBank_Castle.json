@@ -1,0 +1,24 @@
+{
+    "name": "Castle by the River",
+    "description": "A Castle by the river bank just like River Rum",
+    "id": "9",
+    "image": "https://ipfs.io/ipfs/QmYYCN8ZjMUm7JrSo2mkAmHohoPxHkxfegXagne7ub4CZi/RiverBank_Castle.jpg",
+    "attributes": [
+        {
+            "trait_type": "Primary Landscape",
+            "value": "Castle"
+        },
+        {
+            "trait_type": "Time of Day",
+            "value": "Dusk"
+        },
+        {
+            "trait_type": "View",
+            "value": "Plain"
+        },
+        {
+            "trait_type": "Secondary Landscape",
+            "value": "River"
+        }
+    ]
+}

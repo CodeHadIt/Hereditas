@@ -1,0 +1,46 @@
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+
+.brand {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 4rem;
+    margin-bottom: 20px;
+    margin-right: 1.4rem;
+}
+
+.protocol_name {
+    font-size: 2rem;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    line-height: 5rem;
+    font-weight: 600;
+}
+
+@media(max-width: 765px) {
+
+    .container {
+        padding: 1rem;
+    }
+
+    .logo{
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    .protocol_name{
+        font-size: 1.6rem;
+    }
+}

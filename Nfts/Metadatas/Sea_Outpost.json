@@ -1,0 +1,24 @@
+{
+    "name": "Sea Outpost",
+    "description": "An outpost by the rough seas",
+    "id": "10",
+    "image": "https://ipfs.io/ipfs/QmYYCN8ZjMUm7JrSo2mkAmHohoPxHkxfegXagne7ub4CZi/Sea_Outpost.jpg",
+    "attributes": [
+        {
+            "trait_type": "Primary Landscape",
+            "value": "Sea"
+        },
+        {
+            "trait_type": "Time of Day",
+            "value": "Dusk"
+        },
+        {
+            "trait_type": "View",
+            "value": "Plain"
+        },
+        {
+            "trait_type": "Secondary Landscape",
+            "value": "Outpost"
+        }
+    ]
+}

@@ -1,0 +1,117 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 10rem;  
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form_control {
+    margin: 3rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    position: relative;
+}
+
+.btn {
+    max-width: 10rem;
+}
+
+.form_field {
+    border: 0;
+    border-bottom: 1px solid var(--paragraph_text);
+    width: 100%;
+    padding: 3px;
+    font-size: 1.6rem;
+    background-color: var(--bg_main);
+    color: white;
+}
+
+.form_field::placeholder{
+    color: gray
+}
+
+.form_field:invalid[focused="true"] {
+    border-bottom: 1px solid  var(--accent_one);
+}
+
+.form_field:valid[focused="true"] {
+    border-bottom: 1px solid  var(--accent_two);
+}
+
+.error_message{
+    display: none;
+}
+
+.form_field ~ .error_message {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--accent_one);
+    padding: 1rem;
+    position:absolute;
+    bottom: -5.5rem;
+    min-width: 30rem;
+}
+
+.form_field:invalid[focused="true"] ~ .error_message {
+    display: block
+}
+
+input:focus {
+    outline: none;
+}
+
+.icon_container{
+    position: relative;
+}
+
+.info_icon{
+    color: var(--secondary_blue);
+    background-color: white;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    cursor: pointer;
+    position: absolute;
+}
+
+.popup_container {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 2rem;
+    position:absolute;
+    bottom: -1.5rem;
+    right: -2.5rem;
+    Z-index: 20;
+    min-width: 30rem;
+}
+
+.popup_text {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    font-weight: 500;
+    color: black;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999; 
+}
+
+.popup_bold {
+    font-weight: bold;
+}
+
+@media(max-width: 765px) {
+    .container{
+        margin-top: unset;
+    }
+}

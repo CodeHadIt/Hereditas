@@ -1,0 +1,24 @@
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 8rem;
+    text-align: center;
+    padding:2rem;
+}
+
+.headline {
+    max-width: 70rem;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.intro_paragraph{
+    margin: 0 auto;
+    max-width: 70rem;
+    margin-bottom: 2.5rem;
+}
+
+.showcase{
+    color: var(--secondary_blue);
+}

@@ -1,0 +1,24 @@
+{
+    "name": "Castle Mountains",
+    "description": "An English Castle by the hill",
+    "id": "3",
+    "image": "https://ipfs.io/ipfs/QmYYCN8ZjMUm7JrSo2mkAmHohoPxHkxfegXagne7ub4CZi/Castle_Mountains.jpg",
+    "attributes": [
+        {
+            "trait_type": "Primary Landscape",
+            "value": "Castle"
+        },
+        {
+            "trait_type": "Time of Day",
+            "value": "Dusk"
+        },
+        {
+            "trait_type": "View",
+            "value": "Overview"
+        },
+        {
+            "trait_type": "Secondary Landscape",
+            "value": "Hill"
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "name": "Castle Triangle",
+    "description": "Ancient Castle with a traingular temple entrance",
+    "id": "4",
+    "image": "https://ipfs.io/ipfs/QmYYCN8ZjMUm7JrSo2mkAmHohoPxHkxfegXagne7ub4CZi/Castle-Traingle.jpg",
+    "attributes": [
+        {
+            "trait_type": "Primary Landscape",
+            "value": "Castle"
+        },
+        {
+            "trait_type": "Time of Day",
+            "value": "Daytime"
+        },
+        {
+            "trait_type": "View",
+            "value": "Plain"
+        },
+        {
+            "trait_type": "Secondary Landscape",
+            "value": "Sky"
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+.btn {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    color: white;
+    background: var(--cta_blue);
+    border: 1px solid var(--cta_blue);
+    cursor: pointer;
+    transition: 2s;
+}
+
+.btn:hover {
+    background: var(--cta_blue_hover);
+}
+
+@media(max-width: 765px) {
+    .btn {
+        font-size: 1.6rem;
+    }
+}

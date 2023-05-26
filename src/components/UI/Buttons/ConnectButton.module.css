@@ -1,0 +1,20 @@
+.connect_btn {
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    color: white;
+    background: var(--cta_blue);
+    border: 1px solid var(--cta_blue);
+    cursor: pointer;
+    transition: 3s;
+}
+
+.connect_btn:hover {
+    background: var(--cta_blue_hover);
+}
+
+@media(max-width: 765px) {
+    .connect_btn {
+        font-size: 1.6rem;
+    }
+}

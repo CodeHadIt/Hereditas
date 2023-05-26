@@ -1,0 +1,24 @@
+{
+    "name": "Mount Fiji",
+    "description": "Night time at Mount Fiji Japan and all of its beauty",
+    "id": "6",
+    "image": "https://ipfs.io/ipfs/QmYYCN8ZjMUm7JrSo2mkAmHohoPxHkxfegXagne7ub4CZi/Mount_Fuji.jpg",
+    "attributes": [
+        {
+            "trait_type": "Primary Landscape",
+            "value": "Mountain"
+        },
+        {
+            "trait_type": "Time of Day",
+            "value": "Night Time"
+        },
+        {
+            "trait_type": "View",
+            "value": "Plain"
+        },
+        {
+            "trait_type": "Secondary Landscape",
+            "value": "Lake"
+        }
+    ]
+}

@@ -1,0 +1,72 @@
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+
+.brand {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 4rem;
+    margin-bottom: 20px;
+    margin-right: 1.4rem;
+}
+
+.protocol_name {
+    font-size: 2rem;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    line-height: 5rem;
+    font-weight: 600;
+}
+
+.links {
+    display: flex;
+    font-size: 1.6rem;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+
+.links > a {
+    margin: 2rem;
+}
+
+.links a:hover {
+    color: var(--secondary_blue);
+    transition: 2s;
+}
+
+@media(max-width: 765px) {
+
+    .logo{
+        font-size: 2.8rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .protocol_name{
+        font-size: 1.8rem;
+    }
+
+    .links {
+        display: none;
+    }
+}
+
+@media(max-width: 990px) {
+    .links > a {
+        margin: 1rem;
+    }
+}
