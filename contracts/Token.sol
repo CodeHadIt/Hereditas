@@ -3,6 +3,11 @@ pragma solidity ^0.8.9;
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 error wwtbac_NotOwner();
+
+/**@title A sample ERC20 contract
+ * @author Code HadIt
+ * @notice This contract is for creating an ERC20 token
+ */
 contract Token is ERC20 {
 
     address private owner;

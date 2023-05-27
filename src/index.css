@@ -3,8 +3,10 @@
   --cta_blue: #2769f4;
   --cta_blue_hover: #2669F5;
   --secondary_blue: #4B86FF;
-  --bg_main: #09162E;
-  --paragraph_text: #b7becb;
+  --bg_main: #09162E; 
+  --footer-bg: #071329;
+  --paragraph_text: #7c8497;
+  /* #7c8497 #b7becb*/
   --off_white: #F5F5F5;
   --accent_one: #E74C3C;
   --accent_two: #58D68D;
@@ -23,6 +25,8 @@ body {
   font-family: 'Inter', sans-serif;
   margin: 0;
   background-color: var(--bg_main);
+  /* border: 1px solid red; */
+  /* overflow: hidden; */
 }
 
 h1 {

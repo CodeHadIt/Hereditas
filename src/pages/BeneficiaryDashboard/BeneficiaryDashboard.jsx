@@ -18,9 +18,9 @@ const BeneficiaryDashboard = () => {
   };
 
   return (
-    <>
+    <section className={styles.beneficiary_section}>
       {account.isConnected ? (
-        <section className={styles.main_container}>
+        <div className={styles.main_container}>
           <Card>
             <Beneficiary testator={testatorAddress} />
           </Card>
@@ -34,13 +34,13 @@ const BeneficiaryDashboard = () => {
               </div>
             ) : null}
           </div>
-        </section>
+        </div>
       ) : (
         <h2 className={styles.pretext}>
           Connect Your Wallet to see your recieved gifts.
         </h2>
       )}
-    </>
+    </section>
   );
 };
 

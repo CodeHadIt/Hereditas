@@ -1,16 +1,22 @@
 import React from "react";
 import { NavLink, Link, Outlet } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGifts } from "@fortawesome/free-solid-svg-icons";
 
 import Button from "../components/UI/Buttons/Button";
+import Footer from "../components/Footer/Footer";
 import styles from "./HomeLayout.module.css";
 
 const HomeLayout = () => {
 
+  const handleAlert = () => {
+    alert("Please use app in a browser with an Ethereum wallet installed");
+  };
+
   return (
-    <>
-      <section className={styles.container}>
+    <div className={styles.home_layout}>
+      <div className={styles.container}>
         <div className={styles.brand}>
           <FontAwesomeIcon icon={faGifts} className={styles.logo} />
           <NavLink to="/" className={styles.protocol_name}>
@@ -18,23 +24,32 @@ const HomeLayout = () => {
           </NavLink>
         </div>
         <div className={styles.links}>
-          <NavLink to="about" className={styles.how}>
+          <HashLink smooth to="#how" className={styles.how}>
             How It Works
-          </NavLink>
-          <NavLink to="dashboard/testator" className={styles.how}>
+          </HashLink>
+          <HashLink smooth to="#testator" className={styles.how}>
             As as Testator
-          </NavLink>
-          <NavLink to="dashboard/beneficiary" className={styles.how}>
+          </HashLink>
+          <HashLink smooth to="#beneficiary" className={styles.how}>
             As as Beneficiary
-          </NavLink>
+          </HashLink>
         </div>
         <Button>
-          <Link to="dashboard/testator" className={styles.btn}>Lauch App</Link>
+          {window.ethereum ? (
+            <Link to="dashboard/testator" className={styles.btn}>
+              Lauch App
+            </Link>
+          ) : (
+            <Link to="#" onClick={handleAlert}>
+              Lauch App
+            </Link>
+          )}
         </Button>
-      </section>
+      </div>
 
-      <Outlet/>
-    </>
+      <Outlet />
+      <Footer />
+    </div>
   );
 };
 

@@ -4,6 +4,8 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
+/* Errors */
+
 error WillsAddressZeroError();
 error WillsInsufficientAmountError();
 error WillsInvalidReleaseDateError(uint releaseDate, uint blockTimeStamp);
@@ -13,9 +15,21 @@ error WillsNotBeneficiaryError(address beneficiary, address caller);
 error WillsGiftAlreadyReleasedError();
 error WillsNotTestatorError(address testator, address caller);
 
+
+/**@title A sample Wills Contract
+ * @author Code HadIt
+ * @notice This contract is for gifting digital assets at a future date
+ * @dev This implements three openzepellin libraries
+ */
+
 contract Will is ReentrancyGuard {
 
+    /* State variables */
+
     address public owner;
+
+
+    /* Type Declarations */
 
     struct EtherGift {
         address payable testator;
@@ -43,12 +57,14 @@ contract Will is ReentrancyGuard {
         bool released;
     }
 
+    /* Mappings */
+
     mapping(address => mapping(address => EtherGift[])) public etherGifts;
     mapping(address => mapping(address => FungibleTokenGift[])) public tokenGifts;
     mapping(address => mapping(address => NFTGift[])) public nftGifts;
-
     mapping(address => address[]) public listOfBeneficiaries;
 
+    /* Events */
     event EtherGiftCreated(address indexed testator, address indexed beneficiary, uint amount, uint releaseDate);
     event FungibleTokenGiftCreated(address indexed testator, address indexed contractAddress, address indexed beneficiary, uint amount, uint releaseDate);
     event NFTGiftCreated(address indexed testator, address indexed contractAddress, address indexed beneficiary, uint tokenId, uint releaseDate);
@@ -61,10 +77,15 @@ contract Will is ReentrancyGuard {
 
     receive() external payable {}
 
+    /* Functions */
+
     constructor() {
         owner = msg.sender;
     }
 
+    /**
+     * @dev This is the function a Testator calls when he wants to Gift his Ether.
+     */
     function createEtherGift(address payable _beneficiary, uint256 _amount, uint256 _releaseDate) public payable nonReentrant {
         if(_beneficiary == address(0)){
             revert WillsAddressZeroError();
@@ -98,6 +119,11 @@ contract Will is ReentrancyGuard {
         emit EtherGiftCreated(msg.sender, _beneficiary, _amount, _releaseDate);
     }
 
+    /**
+     * @dev This is the function a beneficiary calls when he wants to claim Ether Gifts given to him.
+     * Unless certain conditions are met, he cannot claim. 
+     */
+
     function releaseEther( uint _giftIndex, address _testator) public payable nonReentrant {
         //Thinkered
         EtherGift storage gift = etherGifts[_testator][msg.sender][_giftIndex];
@@ -115,6 +141,10 @@ contract Will is ReentrancyGuard {
         emit GiftReleased(gift.beneficiary, "Ether", _giftIndex);
     }
 
+    /**
+     * @dev This is the function a Testator calls when he wants to rescind his Ether.
+     * He can only call this when the Gift has not been claimed.
+     */
     function cancelEtherGift(uint _giftIndex, address _beneficiary) public nonReentrant{
         EtherGift storage gift = etherGifts[msg.sender][_beneficiary][_giftIndex];
         if(msg.sender != gift.testator){
@@ -133,7 +163,9 @@ contract Will is ReentrancyGuard {
         emit EtherGiftCancelled(msg.sender, gift.beneficiary, gift.amount, gift.releaseDate);
     }
 
-
+    /**
+     * @dev This is the function a Testator calls when he wants to Gift any ERC20 Token he owns.
+     */
     function createFungibleTokenGift(IERC20 _tokenAddress, address _beneficiary, uint256 _amount, uint256 _releaseDate) public nonReentrant{
         if(_beneficiary == address(0)){
             revert WillsAddressZeroError();
@@ -167,7 +199,10 @@ contract Will is ReentrancyGuard {
         emit FungibleTokenGiftCreated(msg.sender, address(_tokenAddress),_beneficiary , _amount, _releaseDate);
     }
 
-
+    /**
+     * @dev This is the function a beneficiary calls when he wants to claim ERC20(Token) Gifts given to him.
+     * Unless certain conditions are met, he cannot claim. 
+     */
     function releaseFungibleTokenGift(uint _giftIndex, address _testator) public nonReentrant {
         FungibleTokenGift storage gift = tokenGifts[_testator][msg.sender][_giftIndex];
         if(block.timestamp < gift.releaseDate) {
@@ -184,7 +219,10 @@ contract Will is ReentrancyGuard {
         emit GiftReleased(gift.beneficiary, "ERC20 Token", _giftIndex);
     }
 
-
+    /**
+     * @dev This is the function a Testator calls when he wants to rescind his ERC20 Token Gifts.
+     * He can only call this when the Token(s)/Gift has not been claimed.
+     */
     function cancelFungibleTokenGift(uint _giftIndex, address _beneficiary) public nonReentrant {
         FungibleTokenGift storage gift = tokenGifts[msg.sender][_beneficiary][_giftIndex];
         if(msg.sender != gift.testator){
@@ -205,6 +243,9 @@ contract Will is ReentrancyGuard {
     }
 
 
+    /**
+     * @dev This is the function a Testator calls when he wants to Gift NFTs he owns.
+     */
     function createNFTGift(IERC721 _nftContract, address _beneficiary, uint _tokenId, uint _releaseDate) public nonReentrant {
         if(_beneficiary == address(0)){
             revert WillsAddressZeroError();
@@ -238,6 +279,10 @@ contract Will is ReentrancyGuard {
         emit NFTGiftCreated(msg.sender, address(_nftContract),_beneficiary , _tokenId, _releaseDate);
     }
 
+    /**
+     * @dev This is the function a beneficiary calls when he wants to claim NFT Gifts given to him.
+     * Unless certain conditions are met, he cannot claim. 
+     */
 
     function releaseNFTGift(uint256 _giftIndex, address _testator) public nonReentrant {
         NFTGift storage gift = nftGifts[_testator][msg.sender][_giftIndex];
@@ -254,6 +299,12 @@ contract Will is ReentrancyGuard {
         gift.contractAddress.transferFrom(address(this), gift.beneficiary,gift.tokenId);
         emit GiftReleased(gift.beneficiary, "NFT", _giftIndex);
     }
+
+
+    /**
+     * @dev This is the function a Testator calls when he wants to rescind his NFT gift.
+     * He can only call this when the NFT/Gift has not been claimed.
+     */
 
     function cancelNFTGift(uint _giftIndex, address _beneficiary) public nonReentrant {
         NFTGift storage gift = nftGifts[msg.sender][_beneficiary][_giftIndex];
@@ -273,6 +324,7 @@ contract Will is ReentrancyGuard {
         emit NFTGiftCancelled(msg.sender, address(gift.contractAddress) , gift.beneficiary, gift.tokenId, gift.releaseDate);
     }
 
+    /** Getter Functions */
 
     function getGiftLength(string memory _type, address _testator, address _beneficiary) external view returns(uint){
         if(keccak256(bytes(_type)) == keccak256(bytes("NFT"))) {

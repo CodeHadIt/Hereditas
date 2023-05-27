@@ -184,9 +184,9 @@ const TestatorDashboard = () => {
   };
 
   return (
-    <>
+    <section className={styles.testator_section}>
       {account.isConnected ? (
-        <section className={styles.main_container}>
+        <div className={styles.main_container}>
           <Card>
             <Testator
               giftCreated={giftCreated}
@@ -202,13 +202,13 @@ const TestatorDashboard = () => {
               </a>
             </div>
           </div>
-        </section>
+        </div>
       ) : (
         <h2 className={styles.pretext}>
           Connect Your Wallet to start gifting your assets.
         </h2>
       )}
-    </>
+    </section>
   );
 };
 

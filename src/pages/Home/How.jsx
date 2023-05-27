@@ -6,7 +6,7 @@ import styles from "./How.module.css";
 
 const How = () => {
     return (
-      <section className={styles.container}>
+      <section className={styles.container} id="how">
         <h2 className={styles.headline}>How It Works </h2>
         <p className={styles.intro_paragraph}>
           Hereditas operates on a simple yet sophisticated mechanism. You choose

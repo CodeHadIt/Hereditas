@@ -1,7 +1,12 @@
+.testator_section {
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
 .main_container {
     max-width: 1200px;
     margin: 0 auto;
-    margin-top: 5rem;
     text-align: center;
     padding: 2rem;
     display: grid;
@@ -10,10 +15,11 @@
 }
 
 .pretext{
-    margin: 20rem auto;
+    max-width: 42rem;
     text-align: center;
     color: var(--paragraph_text)
 }
+
 
 .form_container{
     display: flex;
