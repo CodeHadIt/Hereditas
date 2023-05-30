@@ -461,7 +461,7 @@ const Beneficiary = ({testator}) => {
       </div>
       <div className={styles.gifts}>
         <div className={styles.gift_type}>
-          <h5>{gift.nftName}</h5>
+          <h5>{gift.nftImageName}</h5>
           <p>{gift.collectionName}</p>
         </div>
         <div className={styles.due_date}>
@@ -505,7 +505,7 @@ const Beneficiary = ({testator}) => {
       <div className={styles.gift_seperator}></div>
     </div>
   ));
-
+  
   return (
     <>
       {testator > 0 ? (

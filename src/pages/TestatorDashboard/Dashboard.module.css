@@ -1,7 +1,5 @@
 .testator_section {
     min-height: 100vh;
-    display: grid;
-    place-content: center;
 }
 
 .main_container {
@@ -15,9 +13,13 @@
 }
 
 .pretext{
-    max-width: 42rem;
+    min-width: 32rem;
     text-align: center;
-    color: var(--paragraph_text)
+    color: var(--paragraph_text);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 
